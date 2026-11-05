@@ -17,9 +17,8 @@ the words out loud. A line you would never say is not a draft, it is a retake.
 
 - **Name:**
 - **Handle:**
-- **What I do, in one sentence:**
-- **Who I am talking to:** (be specific: "photographers charging under $2,000",
-  not "creatives")
+- **What I do, in one sentence:** агентство 360-digital (360-digital.ru): геомаркетинг и продвижение локального офлайн-бизнеса — Яндекс Карты, 2ГИС, отзывы и рейтинг.
+- **Who I am talking to:** владельцы офлайн-бизнеса (кафе, рестораны, салоны, клиники, автосервисы, фитнес) — уточнить
 - **What I sell:**
 
 ## What I sound like
@@ -28,10 +27,10 @@ the words out loud. A line you would never say is not a draft, it is a retake.
 - **On camera I am:** (fast and loud / dry / calm / funny / deadpan)
 - **Words I actually use:**
 - **Words I would never say out loud:**
-- **Do I swear:** (yes / mild / no)
+- **Do I swear:** mild? (в идеях есть «обосраться» — уточнить)
 - **Emoji in captions:** (never / one, rarely / freely)
-- **Face on camera:** (always / sometimes / faceless)
-- **Voiceover or to-camera:**
+- **Face on camera:** always — 3 формата: студия-подкаст за столом; дома на кухне днём; я вырезанный поверх видео о бренде/истории
+- **Voiceover or to-camera:** to-camera; для фишек — скринкаст с голосом
 - **Pace:** (words per minute, if you have timed yourself reading a script.
   `beats.py --wpm` uses this. Most people are between 150 and 200.)
 
@@ -65,3 +64,8 @@ never invent one, so if this section is empty, every draft comes back with
 - **My keyword CTA, if I use one:** (one word, sayable, no spaces)
 - **What the keyword sends them:**
 - **Where my link goes:**
+
+## Цель рилсов
+
+- Подписчики и заявки.
+- Темы и форматы: см. `instagram/plan.md`.
