@@ -16,8 +16,8 @@ the words out loud. A line you would never say is not a draft, it is a retake.
 ## Who I am
 
 - **Name:**
-- **Handle:**
-- **What I do, in one sentence:** агентство 360-digital (360-digital.ru): геомаркетинг и продвижение локального офлайн-бизнеса — Яндекс Карты, 2ГИС, отзывы и рейтинг.
+- **Handle:** @nikolay_verty
+- **What I do, in one sentence:** агентство 360-digital (360-digital.ru), работаем по всей РФ: геомаркетинг и продвижение локального офлайн-бизнеса — Яндекс Карты, 2ГИС, отзывы и рейтинг.
 - **Who I am talking to:** владельцы офлайн-бизнеса (кафе, рестораны, салоны, клиники, автосервисы, фитнес) — уточнить
 - **What I sell:**
 
@@ -27,7 +27,7 @@ the words out loud. A line you would never say is not a draft, it is a retake.
 - **On camera I am:** (fast and loud / dry / calm / funny / deadpan)
 - **Words I actually use:**
 - **Words I would never say out loud:**
-- **Do I swear:** mild? (в идеях есть «обосраться» — уточнить)
+- **Do I swear:** yes — мат можно
 - **Emoji in captions:** (never / one, rarely / freely)
 - **Face on camera:** always — 3 формата: студия-подкаст за столом; дома на кухне днём; я вырезанный поверх видео о бренде/истории
 - **Voiceover or to-camera:** to-camera; для фишек — скринкаст с голосом
@@ -69,3 +69,8 @@ never invent one, so if this section is empty, every draft comes back with
 
 - Подписчики и заявки.
 - Темы и форматы: см. `instagram/plan.md`.
+
+## Чего нет (не придумывать)
+- Историй про сотрудников нет — идею «Секрет управления персоналом» не делаем.
+- Личных провалов нет — «Как обосраться» делаем как разбор типичных ошибок клиентов на картах.
+- Кейсы — только с сайта 360-digital.ru (пользователь пришлёт текстом).
