@@ -27,7 +27,7 @@
 ## 3. Ссылка
 Одна: страница 360-digital.ru с заявкой на аудит/консультацию (не главная). Если такой страницы нет — главная.
 
-## 4. Хайлайты — готово: `instagram/highlights/highlights.json`, картинки: `python3 make_stories.py instagram/highlights/highlights.json`
+## 4. Хайлайты — готово: тексты `stories/data.json`, картинки: `node stories/render.mjs` → `output/highlights/`
 `Кейсы` · `Цены` · `Как работаем` · `Отзывы` · `Обо мне` · `Чек-лист`
 
 ## 5. Закреп (3 рилса, когда выйдут)
