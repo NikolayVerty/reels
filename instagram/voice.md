@@ -61,8 +61,8 @@ never invent one, so if this section is empty, every draft comes back with
 
 ## The ask
 
-- **My keyword CTA, if I use one:** (one word, sayable, no spaces)
-- **What the keyword sends them:**
+- **My keyword CTA, if I use one:** КАРТЫ
+- **What the keyword sends them:** PDF «Как самостоятельно упаковать и продвинуть карточку в Яндекс Картах» — 40 задач, 8 блоков, план на 4 недели
 - **Where my link goes:**
 
 ## Цель рилсов
