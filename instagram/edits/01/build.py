@@ -19,20 +19,34 @@ group_end = [3.82,8.60,11.17,14.56,17.36,22.15,23.62,27.00,DUR]
 # зона плашек: speaker -> низ кадра, collage -> над стикером
 zone = ["spk","col","spk","col","spk","col","spk","col","spk"]
 
+# Плашки на груди (планы со спикером): по одной строке, 2–4 слова, сменяют друг друга
+chest = {
+  0: [(0.11,"Если ты 11-й"),(1.05,"в Яндекс Картах —"),(2.01,"поздравляю,"),(2.55,"клиентов почти нет")],
+  2: [(8.67,"И это не я придумал —"),(9.99,"это данные Яндекса")],
+  4: [(14.56,"А теперь вопрос,"),(15.40,"от которого у половины"),(16.22,"владельцев"),(16.64,"сжалась жопа")],
+  6: [(22.15,"Посчитай,"),(22.79,"на каком ты месте")],
+  8: [(31.27,"Напиши в комментах,"),(32.09,"какое у тебя место"),(32.77,"или слово «КАРТЫ» —"),(33.75,"подскажу, как попасть"),(34.71,"в первую десятку")],
+}
+CHEST_TOP = 1330
 plaques_html=[]; js=[]
 for gi,g in enumerate(groups):
-    top = 1120 if zone[gi]=="spk" else 1000
-    if gi==8: top=1090
-    left = 70 if zone[gi]=="spk" else 450
-    if gi in (5,): left=70
-    items=[]
+    if gi in chest:
+        items = chest[gi]
+        for k,(t,txt) in enumerate(items):
+            pid=f"p{gi}_{k}"
+            end = items[k+1][0] if k+1 < len(items) else group_end[gi]
+            plaques_html.append(f'<div class="prow" style="top:{CHEST_TOP}px"><div class="plq chest" id="{pid}">{txt}</div></div>')
+            js.append(f'tl.fromTo("#{pid}",{{opacity:0,y:14,scale:.9}},{{opacity:1,y:0,scale:1,duration:.14,ease:"back.out(2.2)"}},{t});')
+            js.append(f'tl.set("#{pid}",{{opacity:0}},{end});')
+        continue
+    top, left, w = 1000, (70 if gi==5 else 450), (900 if gi==5 else 560)
+    its=[]
     for k,(t,txt) in enumerate(g):
         pid=f"p{gi}_{k}"
-        items.append(f'<div class="plq" id="{pid}" style="margin-left:{(k%2)*36}px">{txt}</div>')
+        its.append(f'<div class="plq" id="{pid}" style="margin-left:{(k%2)*36}px">{txt}</div>')
         js.append(f'tl.fromTo("#{pid}",{{opacity:0,y:18,scale:.92}},{{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(2)"}},{t});')
         js.append(f'tl.set("#{pid}",{{opacity:0}},{group_end[gi]});')
-    w = 900 if left==70 else 560
-    plaques_html.append(f'<div class="pgrp" style="top:{top}px;left:{left}px;width:{w}px">{"".join(items)}</div>')
+    plaques_html.append(f'<div class="pgrp" style="top:{top}px;left:{left}px;width:{w}px">{"".join(its)}</div>')
 
 # Рейтинг 20 мест
 rows=[]
@@ -63,6 +77,8 @@ html,body{{margin:0;background:#000}}
 #camshade{{position:absolute;inset:0;background:rgba(10,10,14,.72);opacity:0}}
 #camframe{{position:absolute;inset:0;border:30px solid #fff;box-sizing:border-box;opacity:0}}
 #ov{{position:absolute;inset:0;z-index:3}}
+.prow{{position:absolute;left:0;right:0;display:flex;justify-content:center}}
+.plq.chest{{font-size:58px;white-space:nowrap;padding:10px 26px 14px}}
 .pgrp{{position:absolute;display:flex;flex-direction:column;align-items:flex-start;gap:12px}}
 .plq{{position:relative;max-width:100%;box-sizing:border-box;background:var(--y);color:var(--ink);font-weight:800;font-size:46px;line-height:1.12;padding:10px 20px 12px;
  box-shadow:6px 6px 0 var(--ink);opacity:0}}
@@ -105,8 +121,8 @@ html,body{{margin:0;background:#000}}
 #ss2{{left:70px;top:820px;font-size:108px;white-space:nowrap;line-height:1;color:var(--y)}}
 #ss3{{left:70px;top:1000px;font-size:64px;color:#fff;width:900px;line-height:1.1}}
 #kw{{left:70px;top:300px;font-family:Manrope;font-style:normal;font-size:96px;color:var(--ink);background:var(--y);padding:6px 28px;border:5px solid var(--ink);box-shadow:8px 8px 0 var(--ink)}}
-#sub{{position:absolute;left:340px;top:1560px;width:400px;height:84px;border-radius:16px;background:#0095F6;color:#fff;font-weight:800;font-size:38px;display:flex;align-items:center;justify-content:center;opacity:0}}
-#sub2{{position:absolute;left:340px;top:1560px;width:400px;height:84px;border-radius:16px;background:#EFEFEF;color:var(--ink);font-weight:800;font-size:38px;display:flex;align-items:center;justify-content:center;opacity:0}}
+#sub{{position:absolute;left:70px;top:450px;width:400px;height:84px;border-radius:16px;background:#0095F6;color:#fff;font-weight:800;font-size:38px;display:flex;align-items:center;justify-content:center;opacity:0}}
+#sub2{{position:absolute;left:70px;top:450px;width:400px;height:84px;border-radius:16px;background:#EFEFEF;color:var(--ink);font-weight:800;font-size:38px;display:flex;align-items:center;justify-content:center;opacity:0}}
 </style></head>
 <body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{DUR}" data-width="1080" data-height="1920">
