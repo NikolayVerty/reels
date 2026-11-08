@@ -1,9 +1,33 @@
-# Herk Edit Kit: workspace guide
+# Reels — рабочий репозиторий
+
+Здесь делаются рилсы: сценарии, тексты, хуки и сами видео.
+
+## Инструменты
+- `render.py` — сборка вертикального видео 1080×1920 из JSON-сценария (`scenarios/*.json` → `output/*.mp4`). Описание — `README.md`.
+- `.claude/skills/ig-*` — скиллы из [instagram-agent-skill](https://github.com/Jakeschincariol/instagram-agent-skill) (MIT): `/ig-reel`, `/ig-caption`, `/ig-plan`, `/ig-viral`, `/ig-human` и др.
+
+## Где хранить данные скиллов
+Скиллы ссылаются на `~/.claude/instagram/` (voice.md, swipe.md, plan.md, log.md). В этом проекте вместо этого
+используй папку `instagram/` в корне репозитория — домашняя папка в облачной сессии не сохраняется.
+
+## Правила
+- Общение с пользователем и тексты рилсов — на русском, если не попросили иначе.
+- `hookscore.py`, `beats.py`, `detect.py` и `humanize.py` настроены на английский текст: для русских хуков их оценки ориентировочные, финальную оценку давай сам по тем же критериям.
+- Ничего не публикуем: скиллы пишут, пользователь постит.
+- Не выдумывать цифры и факты от имени пользователя — оставлять `{{ваше число}}`.
+- Эмодзи в тексте внутри видео стандартный шрифт не рисует.
+
+## Herk Edit Kit (монтаж talking-head)
+В репозиторий влит Herk Edit Kit (HyperFrames, монтажные скиллы `cut-silences`, `cut-mistakes`, `edit-video`,
+`short-form-edit` и др.), Remotion-скиллы `remotion-*` и агент `montazher` (`.claude/agents/montazher.md`) для
+черновой чистки пауз и дублей. Ниже исходный гайд кита (он же в `AGENTS.md`). Правила проекта выше важнее.
+
+### Herk Edit Kit: workspace guide
 
 Turn a talking-head recording into an intentional edit using local HyperFrames
 rendering, transcript-driven cuts, and reusable motion graphics.
 
-## Runtime routing
+### Runtime routing
 
 `AGENTS.md` and `CLAUDE.md` contain the same standing guide. Keep them synchronized.
 Claude Code uses `.claude/skills/`. Codex uses the generated `.agents/skills/`.
@@ -12,7 +36,7 @@ Use `$edit-video` in Codex, `/edit-video` in Claude Code, or natural language.
 Model and permission choices belong to the user; `.codex/config.toml` only adds
 document loading defaults. Work locally unless the user requests subagents.
 
-## Start and route
+### Start and route
 
 Read `README.md` for installation and `docs/WORKFLOW.md` for a complete edit.
 Use `edit-video` to coordinate transcription, cuts, design, and verification.
@@ -43,7 +67,7 @@ The philosophy's fast sizzle pacing is a style reference. Give educational speec
 room to breathe. The project brief controls pacing, palette, and typography.
 Framework skill contracts override historical code recipes in the style guide.
 
-## Workspace
+### Workspace
 
 Create a project with `npm run new-video -- my-video`. Keep source media, EDLs,
 transcripts, compositions, and renders together under `video-projects/<slug>/`.
@@ -58,7 +82,7 @@ renders are gitignored. The 12 already-published projects are retained as teachi
 projects stay ignored. Do not treat existing public examples as permission to add
 new personal footage. Never print secrets or copy private media into library examples.
 
-## Editing and timing
+### Editing and timing
 
 Before choosing a transcription, asset-generation, or voiceover service, read
 `docs/TOOLS-AND-API-KEYS.md` and check the user's provider choice and local setup.
@@ -82,7 +106,7 @@ Register one synchronous paused GSAP timeline per composition in window.__timeli
 using its exact composition ID. Keep finite timelines and explicit durations.
 HyperFrames owns media playback. Use deterministic animation and local assets.
 
-## Verification and approvals
+### Verification and approvals
 
 Run `node scripts/preflight.mjs <project>` and HyperFrames lint. For anchored
 sub-compositions, run `node scripts/validate-beat-sync.mjs <project>`; each beat
