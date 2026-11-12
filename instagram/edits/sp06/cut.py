@@ -1,13 +1,13 @@
 # Нарезка фрагмента выступления «Суровый питерский форум» в вертикаль: слайд сверху, спикер снизу.
 import json, wave, numpy as np, subprocess, sys, os
 TALK, WAV, WORDS, OUT = sys.argv[1:5]
-segs=[(606.88,617.30),(688.28,689.42),(690.52,699.62),(700.28,702.60),(707.84,710.36),(712.08,717.98),(726.94,735.11),(735.11,735.70)]
+segs=[(606.88,617.30),(688.28,689.42),(690.52,699.62),(700.28,702.60),(707.84,710.36),(712.08,717.98),(726.94,735.92),(735.92,736.55)]
 wf=wave.open(WAV); a=np.frombuffer(wf.readframes(wf.getnframes()),dtype=np.int16).astype(np.float32)/32768
 db=20*np.log10(np.sqrt(np.convolve(a**2,np.ones(400)/400,'same'))[::160]+1e-9); thr=np.percentile(db,95)-30
 def tight(s,e):
     i0,i1=int(s*100),int(e*100); idx=np.where(db[i0:i1]>thr)[0]
     return (s,e) if len(idx)==0 else (max(s,(i0+idx[0])/100-0.06), min(e+0.0,(i0+idx[-1])/100+0.10))
-cuts=[tight(*x) for x in segs[:-1]]+[segs[-1]]  # последний отрезок — тихий хвост 0,6 с
+cuts=[tight(*x) for x in segs[:-2]]+segs[-2:]  # последний отрезок — тихий хвост 0,6 с
 words=json.load(open(WORDS))['words']; nw=[]; off=0
 for s,e in cuts:
     for x in words:
