@@ -6,6 +6,7 @@ covers=[
  ('sp03',480,'Часть 3','Яндекс <mark>сам опускает</mark> тебя в выдаче','<b>88% → 55%</b><i>отказов после работы с рейтингом</i>'),
  ('sp04',545,'Часть 4','Автосалон: лиды по <mark>439&nbsp;₽</mark> с&nbsp;карт','<b>2 318</b><i>лидов за 8 месяцев</i>'),
  ('sp05',595,'Часть 5','Чек-лист: <mark>9&nbsp;пунктов</mark> для Яндекс Карт','<b>Сохрани</b><i>чтобы не потерять</i>'),
+ ('sp06',695,'Часть 6','Google ушёл. <mark>А&nbsp;его карты</mark> работают','<b>23 звонка</b><i>без продвижения, с нуля</i>'),
 ]
 css='''@font-face{font-family:M;font-weight:800;src:url(manrope-cyrillic-800-normal.woff2)}
 @font-face{font-family:M;font-weight:800;src:url(manrope-latin-800-normal.woff2);unicode-range:U+0000-00FF}
