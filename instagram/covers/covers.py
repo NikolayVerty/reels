@@ -7,6 +7,7 @@ covers=[
  ('sp04',545,'Часть 4','Автосалон: лиды по <mark>439&nbsp;₽</mark> с&nbsp;карт','<b>2 318</b><i>лидов за 8 месяцев</i>'),
  ('sp05',595,'Часть 5','Чек-лист: <mark>9&nbsp;пунктов</mark> для Яндекс Карт','<b>Сохрани</b><i>чтобы не потерять</i>'),
  ('sp06',690,'Часть 6','Google ушёл. <mark>А&nbsp;его карты</mark> работают','<b>23 звонка</b><i>без продвижения, с нуля</i>'),
+ ('sp07',750,'Часть 7','2ГИС работает <mark>не&nbsp;везде</mark>','<b>Восток ✓</b><i>там окупается, в центре — часто нет</i>'),
 ]
 css='''@font-face{font-family:M;font-weight:800;src:url(manrope-cyrillic-800-normal.woff2)}
 @font-face{font-family:M;font-weight:800;src:url(manrope-latin-800-normal.woff2);unicode-range:U+0000-00FF}
