@@ -15,8 +15,8 @@ background-image:linear-gradient(rgba(15,15,18,.07) 2px,transparent 2px),linear-
 .top{position:absolute;left:70px;top:270px;display:flex;gap:16px;align-items:center}
 .tag{background:#0F0F12;color:#FFC24B;font-weight:800;font-size:34px;padding:8px 18px}
 .ev{font-weight:700;font-size:30px;color:#55555c}
-h1{position:absolute;left:70px;top:350px;width:940px;margin:0;font-weight:800;font-size:112px;line-height:.98;color:#0F0F12;letter-spacing:-1px}
-h1 mark{background:#FFC24B;color:#0F0F12;padding:0 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+h1{position:absolute;left:70px;top:350px;width:940px;margin:0;font-weight:800;font-size:112px;line-height:1.02;color:#0F0F12;letter-spacing:-1px}
+h1 mark{background:linear-gradient(transparent 20%,#FFC24B 20%,#FFC24B 90%,transparent 90%);color:#0F0F12;padding:0 8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .sp{position:absolute;left:50%;bottom:150px;width:1240px;transform:translateX(-50%);filter:drop-shadow(0 0 0 #fff) drop-shadow(10px 0 0 #fff) drop-shadow(-10px 0 0 #fff) drop-shadow(0 10px 0 #fff) drop-shadow(0 -10px 0 #fff) drop-shadow(14px 18px 0 rgba(15,15,18,.18))}
 .st{position:absolute;right:50px;bottom:290px;background:#fff;border:5px solid #0F0F12;box-shadow:10px 10px 0 #FFC24B;padding:18px 26px;transform:rotate(-4deg);max-width:440px}
 .st b{display:block;white-space:nowrap;font-weight:800;font-size:68px;color:#16A34A;line-height:1}
