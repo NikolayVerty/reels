@@ -1,7 +1,7 @@
 # Нарезка фрагмента выступления «Суровый питерский форум» в вертикаль: слайд сверху, спикер снизу.
 import json, wave, numpy as np, subprocess, sys, os
 TALK, WAV, WORDS, OUT = sys.argv[1:5]
-segs=[(2136.36,2142.70),(2154.22,2158.45),(2171.20,2185.95),(2187.00,2198.40),(2203.95,2209.95),(2219.20,2229.75)]
+segs=[(2136.36,2142.70),(2154.22,2158.45),(2171.20,2186.25),(2187.00,2198.66),(2203.95,2210.06),(2219.20,2229.75)]
 wf=wave.open(WAV); a=np.frombuffer(wf.readframes(wf.getnframes()),dtype=np.int16).astype(np.float32)/32768
 db=20*np.log10(np.sqrt(np.convolve(a**2,np.ones(400)/400,'same'))[::160]+1e-9); thr=np.percentile(db,95)-30
 def tight(s,e):

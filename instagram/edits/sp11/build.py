@@ -1,11 +1,11 @@
 # index.html для ролика из выступления: 2ГИС — статистику даст менеджер.
 import os
 P=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DUR=53.27
+DUR=53.94
 caps=[(0.04,"Замечали? В Яндекс Поиске"),(1.46,"теперь платная выдача"),(3.26,"Первые четыре места"),(4.34,"в органике — продаются"),(6.38,"Попасть туда можно"),(7.50,"через Яндекс Директ"),(9.10,"или подписку Яндекс Бизнеса"),
 (10.61,"Инструмент классный —"),(12.47,"в топ очень быстро"),(13.99,"за деньги"),(14.85,"Но не стоит, если карточка"),(16.91,"не готова к этому трафику"),(21.19,"Часто вижу: запустили рекламу,"),(23.07,"рейтинг так себе,"),(23.91,"упаковки нет —"),(24.67,"и бюджет сливается"),
-(25.38,"Ещё классный инструмент —"),(26.86,"галерея услуг"),(27.84,"Тоже через Директ"),(29.80,"или подписку Яндекс Бизнеса"),(33.20,"Новый формат"),(34.76,"выше контекста и SEO"),(36.75,"для всего, что связано с услугами"),
-(37.89,"Туда подтягиваются"),(39.71,"Яндекс Услуги,"),(41.17,"Профи.ру, Яндекс Бизнес"),(42.72,"Яндекс просто взял —"),(45.64,"бах!"),(46.30,"и поставил галерею"),(47.24,"выше контекста и SEO"),(49.48,"А попасть туда можно"),(50.88,"только с хорошей репутацией")]
+(25.68,"Ещё классный инструмент —"),(27.16,"галерея услуг"),(28.14,"Тоже через Директ"),(30.10,"или подписку Яндекс Бизнеса"),(33.50,"Новый формат"),(35.06,"выше контекста и SEO"),(37.31,"для всего, что связано с услугами"),
+(38.45,"Туда подтягиваются"),(40.27,"Яндекс Услуги,"),(41.73,"Профи.ру, Яндекс Бизнес"),(43.39,"Яндекс просто взял —"),(46.31,"бах!"),(46.97,"и поставил галерею"),(47.91,"выше контекста и SEO"),(50.15,"А попасть туда можно"),(51.55,"только с хорошей репутацией")]
 CH=[]; JS=[]
 for i,(t,txt) in enumerate(caps):
     end=caps[i+1][0] if i+1<len(caps) else DUR
@@ -91,15 +91,15 @@ window.__timelines=window.__timelines||{{}};
 const tl=gsap.timeline({{paused:true}});
 tl.fromTo("#lbl",{{opacity:0,y:-20}},{{opacity:1,y:0,duration:.3,ease:"power2.out"}},0.05);
 tl.fromTo("#h",{{opacity:0,scale:1.25}},{{opacity:1,scale:1,duration:.35,ease:"expo.out",transformOrigin:"0 0"}},0.05);
-tl.fromTo("#pay",{{opacity:0,scale:1.5}},{{opacity:1,scale:1,duration:.3,ease:"back.out(2)"}},3.3);
-tl.set("#pay",{{opacity:0}},10.5);
-tl.fromTo("#pay2",{{opacity:0,scale:1.5}},{{opacity:1,scale:1,duration:.3,ease:"back.out(2)"}},21.2);
-tl.set("#pay2",{{opacity:0}},25.3);
-tl.fromTo("#cd1",{{opacity:0,scale:.92}},{{opacity:1,scale:1,duration:.3,ease:"power3.out"}},33.2);
-const T={{s1:34.76,s2:35.6,s3:36.2,s4:36.6}};
+tl.fromTo("#pay",{{opacity:0,scale:1.50}},{{opacity:1,scale:1,duration:.3,ease:"back.out(2)"}},3.30);
+tl.set("#pay",{{opacity:0}},10.50);
+tl.fromTo("#pay2",{{opacity:0,scale:1.50}},{{opacity:1,scale:1,duration:.3,ease:"back.out(2)"}},21.20);
+tl.set("#pay2",{{opacity:0}},25.60);
+tl.fromTo("#cd1",{{opacity:0,scale:.92}},{{opacity:1,scale:1,duration:.3,ease:"power3.out"}},33.50);
+const T={{s1:35.06,s2:35.90,s3:36.50,s4:36.90}};
 for(const k in T) tl.from("#"+k,{{opacity:0,x:-40,duration:.25,ease:"power2.out"}},T[k]);
-tl.from("#sf",{{opacity:0,scale:1.3,duration:.25,ease:"back.out(2)"}},50.9);
-tl.fromTo("#pay3",{{opacity:0,scale:1.5}},{{opacity:1,scale:1,duration:.3,ease:"back.out(2)"}},51.8);
+tl.from("#sf",{{opacity:0,scale:1.3,duration:.25,ease:"back.out(2)"}},51.57);
+tl.fromTo("#pay3",{{opacity:0,scale:1.50}},{{opacity:1,scale:1,duration:.3,ease:"back.out(2)"}},52.47);
 {chr(10).join(JS)}
 window.__timelines["main"]=tl;
 </script></body></html>'''
