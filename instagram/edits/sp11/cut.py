@@ -1,13 +1,13 @@
 # Нарезка фрагмента выступления «Суровый питерский форум» в вертикаль: слайд сверху, спикер снизу.
 import json, wave, numpy as np, subprocess, sys, os
 TALK, WAV, WORDS, OUT = sys.argv[1:5]
-segs=[(2136.36,2142.70),(2154.22,2158.45),(2171.20,2186.25),(2187.00,2198.66),(2203.95,2210.06),(2219.20,2229.75)]
+segs=[(2136.36,2142.70),(2154.22,2158.45),(2171.20,2186.25),(2187.00,2198.66),(2203.95,2210.06),(2219.20,2230.00),(2230.00,2230.50)]
 wf=wave.open(WAV); a=np.frombuffer(wf.readframes(wf.getnframes()),dtype=np.int16).astype(np.float32)/32768
 db=20*np.log10(np.sqrt(np.convolve(a**2,np.ones(400)/400,'same'))[::160]+1e-9); thr=np.percentile(db,95)-30
 def tight(s,e):
     i0,i1=int(s*100),int(e*100); idx=np.where(db[i0:i1]>thr)[0]
     return (s,e) if len(idx)==0 else (max(s,(i0+idx[0])/100-0.06), min(e+0.0,(i0+idx[-1])/100+0.10))
-cuts=[tight(*x) for x in segs]
+cuts=[tight(*x) for x in segs[:-2]]+segs[-2:]  # конец «органики» по громкости + тихий хвост
 words=json.load(open(WORDS))['words']; nw=[]; off=0
 for s,e in cuts:
     for x in words:
@@ -19,7 +19,9 @@ json.dump({'words':nw},open(OUT+'/transcript.json','w'),ensure_ascii=False,inden
 f=[]; n=len(cuts)
 for i,(s,e) in enumerate(cuts):
     d=e-s
-    f.append(f"[0:v]trim={s}:{e},setpts=PTS-STARTPTS[v{i}];[0:a]atrim={s}:{e},asetpts=PTS-STARTPTS,afade=t=in:d=0.015,afade=t=out:st={d-0.02:.3f}:d=0.02[a{i}]")
+    vol=',volume=0' if i==len(cuts)-1 else ''
+    fo=0.08 if i==len(cuts)-2 else 0.02
+    f.append(f"[0:v]trim={s}:{e},setpts=PTS-STARTPTS[v{i}];[0:a]atrim={s}:{e},asetpts=PTS-STARTPTS,afade=t=in:d=0.015,afade=t=out:st={d-fo:.3f}:d={fo}{vol}[a{i}]")
 f.append(''.join(f"[v{i}][a{i}]" for i in range(n))+f"concat=n={n}:v=1:a=1[v][a]")
 f.append("[v]split[v1][v2];[v1]crop=1162:660:44:352,scale=1080:613:flags=lanczos[sl];[v2]crop=640:600:1236:352,scale=1080:1012:flags=lanczos,unsharp=5:5:0.4[sp]")
 f.append("color=c=0x0F0F12:s=1080x1920:r=30[bg];[bg][sl]overlay=0:270:shortest=1[b1];[b1][sp]overlay=0:908,fps=30,format=yuv420p[vo]")
