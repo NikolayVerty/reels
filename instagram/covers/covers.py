@@ -11,6 +11,7 @@ covers=[
  ('sp08',1784,'Часть 8','Моё хобби — читать <mark>плохие отзывы</mark>','<b>25 000</b><i>просмотров одного плохого отзыва</i>'),
  ('sp09',1920,'Часть 9','Отзыв не прошёл? <mark>Виноват VPN</mark>','<b>Без VPN</b><i>и только с места — тогда пройдёт</i>'),
  ('sp10',2041,'Часть 10','Удаляем негативные отзывы <mark>через&nbsp;ИИ</mark>','<b>Снят ✓</b><i>«отзыв снят с публикации»</i>'),
+ ('sp11',2141,'Часть 11','Топ Яндекса <mark>продаётся</mark>. Но&nbsp;не&nbsp;всем','<b>4 места</b><i>за деньги — и галерея услуг</i>'),
 ]
 css='''@font-face{font-family:M;font-weight:800;src:url(manrope-cyrillic-800-normal.woff2)}
 @font-face{font-family:M;font-weight:800;src:url(manrope-latin-800-normal.woff2);unicode-range:U+0000-00FF}
