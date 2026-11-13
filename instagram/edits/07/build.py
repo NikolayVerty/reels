@@ -1,18 +1,18 @@
 # Ролик 07 «Любой может поменять тебе телефон»: полноэкранная голова + коллажи (стиль ролика 01), запись экрана в телефоне.
 import json, os, re
 P=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DUR=58.49
-caps=[(0.0,"Любой человек может зайти"),(1.12,"к тебе в карточку"),(1.78,"и поменять телефон"),(2.88,"Да, любой"),
+DUR=56.06
+caps=[(0.00,"Любой человек может зайти"),(1.12,"к тебе в карточку"),(1.78,"и поменять телефон"),(2.88,"Да, любой"),
 (3.76,"В Картах есть кнопка"),(5.38,"«Исправить»"),(6.30,"можно исправить"),(7.30,"любую информацию:"),(8.16,"сайт, контакты —"),(9.26,"всё что угодно"),
 (10.10,"Правку может предложить"),(11.04,"кто угодно:"),(11.96,"бывший сотрудник,"),(13.22,"обиженный клиент"),(14.60,"или твой конкурент"),
 (15.68,"Если ты не следишь —"),(16.60,"правку могут принять"),
 (17.70,"Поменяли сайт —"),(18.58,"клиент уходит к другому"),(19.74,"Поменяли телефон —"),(20.82,"звонки не поступают"),(22.44,"Поставили «закрыто»"),(23.42,"в твой хлебный день —"),(24.74,"клиенты не приходят"),
-(26.18,"Ты теряешь деньги"),(27.08,"и не понимаешь почему"),(28.22,"Узнаёшь, только когда"),(30.16,"клиент скажет:"),(31.16,"«Я звонил —"),(31.70,"никто не ответил»"),
-(32.74,"А вторая беда — галочка"),(33.40,"«Информация подтверждена»"),(34.70,"Не обновлял 3 месяца —"),(36.36,"её просто снимают"),
-(37.42,"Без неё ты падаешь"),(39.70,"в выдаче"),(40.42,"и клиенты уходят"),(41.14,"к тем, у кого она есть"),
-(42.80,"Зайди в Яндекс Бизнес"),(44.20,"→ «История изменений»"),(45.32,"Посмотри, кто что менял"),(46.68,"Сверь телефон, сайт,"),(47.86,"график работы"),(48.94,"Всё ли актуально?"),(50.30,"Пять минут"),
-(50.88,"Не следишь за карточкой ты —"),(52.26,"за тебя её правят другие"),
-(53.70,"Пиши «КАРТЫ» под роликом"),(54.96,"или в директ —"),(55.54,"пришлю, что проверять"),(57.24,"каждый месяц")]
+(26.18,"Ты теряешь деньги"),(27.08,"и не понимаешь почему"),(28.22,"Узнаёшь только тогда,"),(29.28,"когда клиент скажет:"),(30.28,"«Я звонил —"),(30.82,"никто не ответил»"),
+(31.86,"А вторая беда — галочка"),(32.52,"«Информация подтверждена»"),(33.82,"Не обновлял 3 месяца —"),(35.48,"её просто снимают"),
+(36.54,"Без неё ты падаешь"),(37.28,"в выдаче"),(38.00,"и клиенты уходят"),(38.72,"к тем, у кого она есть"),
+(40.38,"Зайди в Яндекс Бизнес"),(41.78,"→ «История изменений»"),(42.90,"Посмотри, кто что менял"),(44.26,"Сверь телефон, сайт,"),(45.44,"график работы"),(46.52,"Всё ли актуально?"),(47.88,"Пять минут"),
+(48.46,"Не следишь за карточкой ты —"),(49.84,"за тебя её правят другие"),
+(51.28,"Пиши «КАРТЫ» под роликом"),(52.54,"или в директ —"),(53.12,"пришлю, что проверять"),(54.82,"каждый месяц")]
 CH=[];JS=[]
 for i,(t,txt) in enumerate(caps):
     end=caps[i+1][0] if i+1<len(caps) else DUR
@@ -103,32 +103,32 @@ function toS(t){{tl.to("#camwrap",{{...STK,duration:.32,ease:"power3.inOut"}},t)
 function toF(t){{tl.to("#camwrap",{{...FULL,duration:.28,ease:"power3.inOut"}},t);tl.to("#frame",{{opacity:0,duration:.1}},t);}}
 function sec(id,a,b){{tl.fromTo(id,{{opacity:0,y:30}},{{opacity:1,y:0,duration:.25,ease:"power3.out"}},a);tl.set(id,{{opacity:0}},b);}}
 // хук
-tl.fromTo("#camzoom",{{scale:1.2}},{{scale:1.03,duration:.5,ease:"expo.out"}},0);
-tl.fromTo("#h1",{{opacity:0,scale:1.4}},{{opacity:1,scale:1,duration:.3,ease:"back.out(2)",transformOrigin:"0 0"}},0.05);
+tl.fromTo("#camzoom",{{scale:1.20}},{{scale:1.03,duration:.5,ease:"expo.out"}},0);
+tl.fromTo("#h1",{{opacity:0,scale:1.40}},{{opacity:1,scale:1,duration:.3,ease:"back.out(2)",transformOrigin:"0 0"}},0.05);
 tl.set("#h1",{{opacity:0}},2.85);
 // запись экрана
-toS(3.45); tl.fromTo("#phone",{{opacity:0,y:120,rotation:4}},{{opacity:1,y:0,rotation:-2,duration:.35,ease:"back.out(1.6)"}},3.5);
-tl.fromTo("#tagBtn",{{opacity:0,scale:1.5}},{{opacity:1,scale:1,duration:.25,ease:"back.out(2)"}},5.3);
+toS(3.45); tl.fromTo("#phone",{{opacity:0,y:120,rotation:4}},{{opacity:1,y:0,rotation:-2,duration:.35,ease:"back.out(1.60)"}},3.50);
+tl.fromTo("#tagBtn",{{opacity:0,scale:1.50}},{{opacity:1,scale:1,duration:.25,ease:"back.out(2)"}},5.30);
 tl.set(["#phone","#tagBtn"],{{opacity:0}},10.05);
 // кто угодно
-sec("#sWho",10.05,15.55); tl.from("#w1",{{opacity:0,x:-60,duration:.22}},11.96); tl.from("#w2",{{opacity:0,x:-60,duration:.22}},13.22); tl.from("#w3",{{opacity:0,x:-60,duration:.22}},14.6);
-toF(15.5); tl.fromTo("#camzoom",{{scale:1.03}},{{scale:1.18,duration:.3,ease:"power4.out"}},16.6); tl.set("#camzoom",{{scale:1.03}},17.6);
+sec("#sWho",10.05,15.55); tl.from("#w1",{{opacity:0,x:-60,duration:.22}},11.96); tl.from("#w2",{{opacity:0,x:-60,duration:.22}},13.22); tl.from("#w3",{{opacity:0,x:-60,duration:.22}},14.60);
+toF(15.50); tl.fromTo("#camzoom",{{scale:1.03}},{{scale:1.18,duration:.3,ease:"power4.out"}},16.60); tl.set("#camzoom",{{scale:1.03}},17.60);
 // потери
-toS(17.55); sec("#sLoss",17.62,26.1); tl.from("#l1",{{opacity:0,x:-60,duration:.22}},17.7); tl.from("#l2",{{opacity:0,x:-60,duration:.22}},19.74); tl.from("#l3",{{opacity:0,x:-60,duration:.22}},22.44);
+toS(17.55); sec("#sLoss",17.62,26.10); tl.from("#l1",{{opacity:0,x:-60,duration:.22}},17.70); tl.from("#l2",{{opacity:0,x:-60,duration:.22}},19.74); tl.from("#l3",{{opacity:0,x:-60,duration:.22}},22.44);
 toF(26.05);
-tl.fromTo("#bub",{{opacity:0,y:60,rotation:-3}},{{opacity:1,y:0,rotation:-1.5,duration:.35,ease:"back.out(1.8)"}},30.1); tl.set("#bub",{{opacity:0}},32.6);
+tl.fromTo("#bub",{{opacity:0,y:60,rotation:-3}},{{opacity:1,y:0,rotation:-1.5,duration:.35,ease:"back.out(1.80)"}},29.22); tl.set("#bub",{{opacity:0}},31.72);
 // галочка
-toS(32.6); sec("#sBadge",32.68,37.35); tl.fromTo("#cross",{{opacity:0,scaleX:0,transformOrigin:"0 50%"}},{{opacity:1,scaleX:1,duration:.3}},36.5); tl.from("#m3",{{opacity:0,scale:1.4,duration:.25,ease:"back.out(2)"}},35.5);
-sec("#sRank",37.4,42.7); tl.fromTo("#rme",{{y:-120}},{{y:0,duration:.6,ease:"bounce.out"}},38.0);
+toS(31.72); sec("#sBadge",31.80,36.47); tl.fromTo("#cross",{{opacity:0,scaleX:0,transformOrigin:"0 50%"}},{{opacity:1,scaleX:1,duration:.3}},35.62); tl.from("#m3",{{opacity:0,scale:1.4,duration:.25,ease:"back.out(2)"}},34.62);
+sec("#sRank",36.52,40.28); tl.fromTo("#rme",{{y:-120}},{{y:0,duration:.6,ease:"bounce.out"}},37.12);
 // что делать
-sec("#sDo",42.75,50.8); tl.from("#d1",{{opacity:0,x:-60,duration:.22}},43.1); tl.from("#d2",{{opacity:0,x:-60,duration:.22}},46.68); tl.from("#d3",{{opacity:0,x:-60,duration:.22}},48.9); tl.from("#five",{{opacity:0,scale:1.6,duration:.25,ease:"back.out(2)"}},50.3);
-toF(50.8);
+sec("#sDo",40.33,48.38); tl.from("#d1",{{opacity:0,x:-60,duration:.22}},40.68); tl.from("#d2",{{opacity:0,x:-60,duration:.22}},44.26); tl.from("#d3",{{opacity:0,x:-60,duration:.22}},46.48); tl.from("#five",{{opacity:0,scale:1.6,duration:.25,ease:"back.out(2)"}},47.88);
+toF(48.38);
 // фраза-скриншот
-tl.to("#shade",{{opacity:1,duration:.2}},50.85); tl.fromTo("#ss1",{{opacity:0,y:40}},{{opacity:1,y:0,duration:.25}},50.88); tl.fromTo("#ss2",{{opacity:0,scale:1.6}},{{opacity:1,scale:1,duration:.3,ease:"expo.out"}},52.26);
-tl.set(["#ss1","#ss2"],{{opacity:0}},53.6); tl.to("#shade",{{opacity:0,duration:.15}},53.58);
+tl.to("#shade",{{opacity:1,duration:.2}},48.43); tl.fromTo("#ss1",{{opacity:0,y:40}},{{opacity:1,y:0,duration:.25}},48.46); tl.fromTo("#ss2",{{opacity:0,scale:1.60}},{{opacity:1,scale:1,duration:.3,ease:"expo.out"}},49.84);
+tl.set(["#ss1","#ss2"],{{opacity:0}},51.18); tl.to("#shade",{{opacity:0,duration:.15}},51.16);
 // призыв
-tl.fromTo("#kw",{{opacity:0,scale:2,rotation:-12}},{{opacity:1,scale:1,rotation:-4,duration:.3,ease:"back.out(2)"}},54.0);
-tl.fromTo("#sub",{{opacity:0,y:40}},{{opacity:1,y:0,duration:.25}},56.3); tl.set("#sub",{{opacity:0}},57.3); tl.set("#sub2",{{opacity:1}},57.3);
+tl.fromTo("#kw",{{opacity:0,scale:2,rotation:-12}},{{opacity:1,scale:1,rotation:-4,duration:.3,ease:"back.out(2)"}},51.58);
+tl.fromTo("#sub",{{opacity:0,y:40}},{{opacity:1,y:0,duration:.25}},53.88); tl.set("#sub",{{opacity:0}},54.88); tl.set("#sub2",{{opacity:1}},54.88);
 {chr(10).join(JS)}
 window.__timelines["main"]=tl;
 </script></body></html>'''
