@@ -9,6 +9,7 @@ covers=[
  ('sp06',690,'Часть 6','Google ушёл. <mark>А&nbsp;его карты</mark> работают','<b>23 звонка</b><i>без продвижения, с нуля</i>'),
  ('sp07',750,'Часть 7','2ГИС работает <mark>не&nbsp;везде</mark>','<b>Восток ✓</b><i>там окупается, в центре — часто нет</i>'),
  ('sp08',1784,'Часть 8','Моё хобби — читать <mark>плохие отзывы</mark>','<b>25 000</b><i>просмотров одного плохого отзыва</i>'),
+ ('sp09',1920,'Часть 9','Отзыв не прошёл? <mark>Виноват VPN</mark>','<b>Без VPN</b><i>и только с места — тогда пройдёт</i>'),
 ]
 css='''@font-face{font-family:M;font-weight:800;src:url(manrope-cyrillic-800-normal.woff2)}
 @font-face{font-family:M;font-weight:800;src:url(manrope-latin-800-normal.woff2);unicode-range:U+0000-00FF}
